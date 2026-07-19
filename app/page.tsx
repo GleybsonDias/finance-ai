@@ -1,8 +1,16 @@
-const Home = () => {
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+
+const Home = async () => {
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/login");
+  }
   return (
-    <h1 className="flex w-screen items-center justify-center bg-red-600">
-      Hello Word!
-    </h1>
+    <div className="flex h-full items-center justify-center bg-red-600">
+      <UserButton showName />
+    </div>
   );
 };
 
