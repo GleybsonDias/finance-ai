@@ -12,7 +12,7 @@ const TransactionPage = async () => {
       <div className="flex w-full items-center justify-between p-6">
         {/* Titulo e botão */}
         <h1 className="text-2xl font-bold">Transações</h1>
-        <Button className="rounded-full">
+        <Button className="rounded-full font-bold">
           Adicionar transação
           <ArrowDownUpIcon />
         </Button>
